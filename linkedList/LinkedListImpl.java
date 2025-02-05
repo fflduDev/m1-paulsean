@@ -90,7 +90,7 @@ public class LinkedListImpl implements LinkedList {
 
 		AtomicInteger count = new AtomicInteger(0);
 
-		this.forEach((ListItem _) -> {
+		this.forEach((ListItem item) -> {
 
 			count.getAndIncrement();
 
