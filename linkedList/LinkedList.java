@@ -1,24 +1,26 @@
 package linkedList;
  
- 
-
 public interface LinkedList {
+
+	// true if it is, false if not
 	public Boolean isItemInList(String thisItem);
-		// true if it is, false if not
+
+	// true if added, false if it was already there, or an error	
 	public Boolean addItem(String thisItem);
-		// true if added, false if it was already there, or an error
+
 	public Integer itemCount();
-	public void listItems(); 
+
+	public void listItems();
+	
+	// true if deleted, false if not there or error
 	public Boolean deleteItem(String thisItem);
-		// true if deleted, false if not there or error
+
 	public Boolean insertBefore(String newItem, String itemToInsertBefore);
 	public Boolean insertAfter(String newItem, String itemToInsertAfter);
-	
-	
-	
-	//EC
+
+	//EC: ascending alphanumeric sort; nothing fancy but ALTERS THE LIST, DOES NOT COPY.
 	public void sort();
-		// ascending alphanumeric sort; nothing fancy but ALTERS THE LIST, DOES NOT COPY.
+
 }
 
 // Implement this interface using class ListItem
