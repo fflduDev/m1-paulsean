@@ -4,9 +4,9 @@ public class LinkedListTester {
 
 	public static void main(String[] args) {
 
-		// create implementation, then...
+		// creating a String implementation
 		
-		LinkedList tester = new LinkedListImpl();
+		LinkedList<String> tester = new LinkedListImpl<>();
 
 		tester.addItem("an item to add");
 		tester.addItem("another item to add");

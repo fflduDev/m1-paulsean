@@ -1,11 +1,11 @@
 package linkedList;
 
-public class ListItem {
+public class ListItem<T> {
 
-	public String data;
-	public ListItem next;
+	public T data;
+	public ListItem<T> next;
 	
-	public ListItem(String data) {
+	public ListItem(T data) {
 
 		this.data = data;
 		this.next = null;

@@ -4,15 +4,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
-public class LinkedListImpl implements LinkedList {
+public class LinkedListImpl<T> implements LinkedList<T> {
 
-	ListItem head = null;
+	ListItem<T> head = null;
 
 	// Internal func that iterates through the list. useful in lots of internal ops
 
-	private void forEach(Function<ListItem, Boolean> callback) {
+	private void forEach(Function<ListItem<T>, Boolean> callback) {
 
-		ListItem prospectiveItem = head;
+		ListItem<T> prospectiveItem = head;
 
 		while (prospectiveItem != null) {
 
@@ -26,9 +26,9 @@ public class LinkedListImpl implements LinkedList {
 
 	}
 
-	private ListItem getTail() {
+	private ListItem<T> getTail() {
 
-		ListItem prospectiveItem = head;
+		ListItem<T> prospectiveItem = head;
 
 		while (prospectiveItem.next != null) {
 
@@ -41,11 +41,11 @@ public class LinkedListImpl implements LinkedList {
 	}
 
 	@Override
-	public Boolean isItemInList(String thisItem) {
+	public Boolean isItemInList(T thisItem) {
 
 		AtomicBoolean isFound = new AtomicBoolean(false);
 
-		this.forEach((ListItem item) -> {
+		this.forEach((ListItem<T> item) -> {
 
 			if (item.data.equals(thisItem)) {
 
@@ -66,20 +66,20 @@ public class LinkedListImpl implements LinkedList {
 	}
 
 	@Override
-	public Boolean addItem(String thisItem) {
+	public Boolean addItem(T thisItem) {
 		
 		if (head == null) {
 
 			// list empty, so new item is head
 
-			head = new ListItem(thisItem);
+			head = new ListItem<T>(thisItem);
 			return true;
 
 		}
 
-		ListItem tail = getTail();
+		ListItem<T> tail = getTail();
 
-		tail.next = new ListItem(thisItem);
+		tail.next = new ListItem<T>(thisItem);
 
 		return true;
 
@@ -90,7 +90,7 @@ public class LinkedListImpl implements LinkedList {
 
 		AtomicInteger count = new AtomicInteger(0);
 
-		this.forEach((ListItem item) -> {
+		this.forEach((ListItem<T> item) -> {
 
 			count.getAndIncrement();
 
@@ -105,9 +105,9 @@ public class LinkedListImpl implements LinkedList {
 	@Override
 	public void listItems() {
 
-		this.forEach((ListItem item) -> {
+		this.forEach((ListItem<T> item) -> {
 
-			System.out.println(item.data);
+			System.out.println(item.data.toString()); // now that everything is generic, we should call .toString to print
 
 			return false; // keep going until last
 
@@ -116,7 +116,7 @@ public class LinkedListImpl implements LinkedList {
 	}
 
 	@Override
-	public Boolean deleteItem(String thisItem) {
+	public Boolean deleteItem(T thisItem) {
 
 		if (!this.isItemInList(thisItem)) {
 
@@ -124,7 +124,7 @@ public class LinkedListImpl implements LinkedList {
 
 		}
 
-		this.forEach((ListItem item) -> {
+		this.forEach((ListItem<T> item) -> {
 
 			if (item.next != null && item.next.data.equals(thisItem)) {
 
@@ -155,21 +155,23 @@ public class LinkedListImpl implements LinkedList {
 	}
 
 	@Override
-	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
+	public Boolean insertBefore(T newItem, T itemToInsertBefore) {
 
-		return null;
+		return null; // TODO: Implement this
 
 	}
 
 	@Override
-	public Boolean insertAfter(String newItem, String itemToInsertAfter) {
+	public Boolean insertAfter(T newItem, T itemToInsertAfter) {
 
-		return null;
+		return null; // TODO: Implement this
 
 	}
 
 	@Override
 	public void sort() {
+
+		return; // TODO: Try to implement this
 		
 	}
 	
