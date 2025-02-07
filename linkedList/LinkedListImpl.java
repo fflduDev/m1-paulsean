@@ -8,7 +8,7 @@ public class LinkedListImpl<T> implements LinkedList<T> {
 
 	ListItem<T> head = null;
 
-	// Internal func that iterates through the list. useful in lots of internal ops
+	// Internal func that iterates through the list. useful in lots of cases
 
 	private void forEach(Function<ListItem<T>, Boolean> callback) {
 
