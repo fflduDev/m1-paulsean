@@ -14,8 +14,9 @@ public class QueueTester {
 		queueInstance.dequeue();
 		queueInstance.dequeue();
 		queueInstance.dequeue();
-		queueInstance.dequeue();
 
+		System.out.println(queueInstance.peek());
+		
 	}
 
 }

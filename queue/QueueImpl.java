@@ -8,12 +8,7 @@ public class QueueImpl implements Queue {
 
 	@Override
 	public boolean isFull() {
-		if (Queue[length - 1] != null) {
-			return false;
-
-		}
-
-		return true;
+		return Queue[length - 1] != null;
 	}
 
 	@Override
@@ -66,7 +61,7 @@ public class QueueImpl implements Queue {
 
 		for (int i = 0; i < Queue.length - 1; i++) {
 
-			Queue[i + 1] = Queue[i];
+			Queue[i] = Queue[i + 1];
 
 		}
 		
@@ -82,8 +77,15 @@ public class QueueImpl implements Queue {
 
 	@Override
 	public String peek() {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (this.isEmpty()) {
+
+			return null;
+
+		}
+
+		return Queue[0];
+
 	}
 
 }
