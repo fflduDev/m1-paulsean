@@ -1,13 +1,15 @@
 package stack;
 
-public interface Stack {
+public interface Stack<T> {
  
-	public void push(String s);
-	public String pop();
+	public void push(T s);
+	public T pop();
+	
 	public Boolean isEmpty();
 	public Boolean isFull();
+	
 	public int size();
-	public String peek();
+	public T peek();
 	
 	public void setCapacity(int size);
 	public void display();

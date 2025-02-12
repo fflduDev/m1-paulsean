@@ -5,7 +5,7 @@ import linkedList.LinkedListImpl;
 import queue.Queue;
 import queue.QueueImpl;
 import stack.Stack;
-import stack.StackImpl;
+import stack.LinkedStackImpl;
 
 public class StagBusClient {
 

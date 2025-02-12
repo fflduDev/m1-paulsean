@@ -4,7 +4,7 @@ public class StackTester {
 
 	public static void main(String[] args) {
 
-		Stack stackTester = new StackImpl();
+		Stack stackTester = new LinkedStackImpl();
 		stackTester.push("thing in stack");
 
 	}
