@@ -6,10 +6,10 @@ public interface Queue {
 	 boolean isEmpty();
 	 
 	 // insert elements to the queue
-	  void enQueue(String element);
+	  void enqueue(String element);
 	  
 	  // delete element from the queue
-	  String deQueue();
+	  String dequeue();
 	  
 	  // display element of the queue
 	  void display();

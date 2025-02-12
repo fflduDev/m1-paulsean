@@ -15,13 +15,13 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void enQueue(String element) {
+	public void enqueue(String element) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public String deQueue() {
+	public String dequeue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
