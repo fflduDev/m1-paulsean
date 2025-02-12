@@ -7,12 +7,12 @@ public class QueueImpl implements Queue {
 
 
 	@Override
-	public boolean isFull() {
+	public boolean isFull() {					//checks if the queue is full
 		return Queue[length - 1] != null;
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public boolean isEmpty() {					//checks if the queue is empty
 		if (Queue[0] == null) {
 			return true;
 		}
@@ -20,15 +20,15 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public void enqueue(String element) {
+	public void enqueue(String element) {		//adds an element to the queue
 
-		if (this.isFull()) {
+		if (this.isFull()) {					//checks if the queue is full
 
 			return;
 
 		}
 	
-		if (Queue[0] == null) {
+		if (Queue[0] == null) {					//Adds element to the first position
 
 			Queue[0] = element;
 			return;
@@ -37,7 +37,7 @@ public class QueueImpl implements Queue {
 
 		int i = 0;
 		
-		while (Queue[i] != null) {
+		while (Queue[i] != null) {				//Adds element to the next availible position
 
 			i++;
 
@@ -49,7 +49,7 @@ public class QueueImpl implements Queue {
 	}
 
 	@Override
-	public String dequeue() {
+	public String dequeue() {					//removes an element from the queue
 
 		if (this.isEmpty()) {
 
@@ -57,28 +57,37 @@ public class QueueImpl implements Queue {
 
 		}
 
-		String returnedString = Queue[0];
 
-		for (int i = 0; i < Queue.length - 1; i++) {
+		String returnedString = Queue[0];		//Saves content of first element 
+
+		for (int i = 0; i < Queue.length - 1; i++) {		//Moves all elements one position forward
 
 			Queue[i] = Queue[i + 1];
 
 		}
 		
-		return returnedString;
+		return returnedString;					//returns the content of the first element
 
 	}
-
+ 
 	@Override
-	public void display() {
-		// TODO Auto-generated method stub
-		
+	public void display() {						//displays all elements in the queue
+
+		for (int i = 0; i < Queue.length; i++) {
+
+			if (Queue[i] != null) {
+
+				System.out.println(Queue[i]);
+
+			}
+
+		}
+
 	}
-
 	@Override
-	public String peek() {
+	public String peek() {						//displays the first element in the queue
 
-		if (this.isEmpty()) {
+		if (this.isEmpty()) {					
 
 			return null;
 
