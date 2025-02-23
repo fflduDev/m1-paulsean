@@ -2,9 +2,7 @@ package queue;
 
 public class QueueTester {
 
-	public static void main(String[] args) {
-
-		Queue queueInstance = new QueueImpl();
+	public static void runTests(Queue queueInstance) {
 
 		queueInstance.enqueue("first");
 		queueInstance.enqueue("second");
