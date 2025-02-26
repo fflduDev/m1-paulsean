@@ -15,7 +15,7 @@ public class StagBusClient {
 		
 		System.out.println("-----L I S T  T E S T------");
 
-		LinkedListTester.runTests(new LinkedListImpl<Integer>());
+		LinkedListTester.runTests(new LinkedListImpl<String>());
 		
 		System.out.println("-----S T A C K  T E S T------");
 

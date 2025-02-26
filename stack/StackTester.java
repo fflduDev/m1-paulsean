@@ -1,36 +1,44 @@
 package stack;
 
 public class StackTester {
-	
-	public static void runTests(Stack<String> stack) {
 
-		System.out.println(stack.isEmpty()); // true 
+    public static void runTests(Stack<String> stack) {
 
-		stack.push("first");
+        stack.push("Paul");															//Adding to stack
+        stack.push("Sean");
+        stack.push("Jasiu");
+        stack.push("Ronny");
 
-		System.out.println(stack.isEmpty()); // false
-		
-		System.out.println(stack.peek()); // first
-		System.out.println(stack.pop()); // returns first, now nothing in stack
+        System.out.println("Stack size: " + stack.size());								//Displaying stack size
+        stack.display();
 
-		System.out.println(stack.isEmpty()); // true
+        System.out.println("");
 
-		stack.push("second");
-		stack.push("third");
-		stack.push("fourth");
+        System.out.println("Peek: " + stack.peek());									//Displaying top of stack
 
-		System.out.println(stack.isEmpty()); // false
-		
-		System.out.println(stack.isFull()); // will never return true on a linked list implementation
+        System.out.println("");
 
-		System.out.println(stack.peek()); // fourth
+        System.out.println("Pop: " + stack.pop());										//Pop stack
 
-		System.out.println(stack.pop()); // fourth
-		System.out.println(stack.pop()); // third
-		System.out.println(stack.pop()); // second
+        stack.push("Jeffrey");														//Adding 2 entries to stack									
+        stack.push("Jared");
 
-		System.out.println(stack.isEmpty()); // true
-		
-	}
+        System.out.println("");
+
+        System.out.println("Peek: " + stack.peek());										//Displaying top of stack
+
+        System.out.println("");
+
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+        stack.pop();																	//Pop stack
+
+		System.out.println("Is empty: "+ stack.isEmpty());								//Checking if stack is empty
+
+    }
 
 }
