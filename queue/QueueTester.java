@@ -42,15 +42,9 @@ public class QueueTester {
 
 		System.out.println("");
 
-		System.out.println("Displaying the queue: ");
+		System.out.println("Displaying the queue after dequeue: ");
 		queueInstance.display();										//Displays the queue
 
-
-
-		
-
-
-		
 	}
 
 }

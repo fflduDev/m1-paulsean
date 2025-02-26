@@ -231,14 +231,14 @@ public class LinkedListImpl<T extends Comparable<T>> implements LinkedList<T> {
 	}
 
 	@Override
-	public void sort() {
+	public void sort() {		
 
 		// Bubble Sort!
 
 		// we loop through the list, swapping items that are out of order
 		// we may get to the end and still have items that are out of order, so we loop again
 		// we will keep looping until no more swaps are needed
-		
+
 		boolean hasSwapped = true;
 
 		while (hasSwapped) {

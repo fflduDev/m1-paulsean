@@ -25,18 +25,16 @@ public class StackTester {
 
         System.out.println("");
 
-        System.out.println("Peek: " + stack.peek());										//Displaying top of stack
+        System.out.println("Peek: " + stack.peek());									//Displaying top of stack
 
         System.out.println("");
-
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-        stack.pop();																	//Pop stack
-
+        
+        while (!stack.isEmpty()) {                                                      //Popping all entries from stack
+            								                                            
+            System.out.println("Pop: " + stack.pop());
+            
+        }
+        
 		System.out.println("Is empty: "+ stack.isEmpty());								//Checking if stack is empty
 
     }
